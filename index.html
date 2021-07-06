@@ -60,7 +60,7 @@
 	</header>
 	<h2 id="greeting">Greeting goes here</h2>
     <main>
-	 <header><h3>A JavaScript Example by Bill Newman</h3></header>
+	 <header><h3>A JavaScript Example by Michelle Nguyen</h3></header>
 		<p>This is a web page that uses JavaScript to determine the current hour, 
 			and presents a different image, custom message, and color based on each 
 			the following times of day:</p>
@@ -90,11 +90,33 @@
 		let myColor = '';
 		let myPic = '';
 
-
 		let myHour = myDate.getHours();
+		let myDay= myDate.getDay();
+	
+		console.log(myDay);
+		let currentDay = '';
 
-		//LINE BELOW FOR TESTING - REMOVE BEFORE PLACING IN SERVICE
-		//myHour = 3;
+		if (myDay == 0) {
+			currentDay = "Today is Sunday.";
+
+		}else if (myDay == 1) {
+			currentDay = "Today is Monday.";
+
+		}else if (myDay == 2) {
+			currentDay = "Today is Tuesday.";
+
+		}else if (myDay == 3) {
+			currentDay = "Today is Wednesday.";
+
+		}else if (myDay == 4) {
+			currentDay = "Today is Thursday.";
+		
+		}else if (myDay == 5) {
+			currentDay = "Today is Friday.";
+		
+		}else{
+			currentDay = "Today is Saturday.";
+		}
 
 		console.log(myHour);
 
@@ -120,7 +142,7 @@
 		}
 
 		//console.log(myText);
-		document.getElementById('greeting').innerHTML = myText;
+		document.getElementById('greeting').innerHTML = myText + " " + currentDay;
 		document.getElementById('greeting').style.color = myColor;
 		document.querySelector("html").style.backgroundColor = myColor;
 		document.getElementById('pic').src = myPic;
